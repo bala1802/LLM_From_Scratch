@@ -80,8 +80,20 @@ The crucial element here is a Rotation Matrix, and its purpose is to rotate a ve
 
 ![alt text](Visuals/05_RoPE.png)
 
-In a more general scenario, when the vector has more than two dimensions, this equation comes into play. 
+In a more general scenario, when the vector has more than two dimensions, the above equation comes into play. 
 
 ![alt text](Visuals/06_RoPE.png)
 
 It essentially divides the vector into chunks of two dimensions each and performs rotations. The rotation process begins with applying a rotation to the first two dimensions of the vector, followed by a rotation to the next two dimensions, and so forth. Each pair of dimensions in the vector is subjected to a different rotation angle, denoted as `θ`. It's worth noting that the vector's dimension is assumed to be an even number, which is typically the case.
+
+#### RoPE Actual Implementation
+
+From the paper, the below equation is Computational efficient realization of Rotary Matrix Multiplication. This computation can be simplified using only two vector multiplications and one vector addition.
+
+![alt text](Visuals/07_RoPE.png)
+
+#### Long-term decay of RoPE
+
+![alt text](Visuals/08_RoPE.png)
+
+Another useful mathematical property lies behind the Rotary Positional Embeddings is that, when the words are close together then they are more likely to have a larger dot product. But when we've two words that are seperated by a lot of tokens apart, then they are expected to have a smaller dot product on an average. This is due to the way that the rotation is defined and intuitively it makes sense, because words that are far apart are less likely to have anything to do with each other.
