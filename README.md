@@ -51,3 +51,9 @@ Another way to tackle this is through Relative Positional Embeddings. Instead of
 ![alt text](Visuals/02_RelativePositionalEmbedding.png)
 
 In a different approach, the attention mechanism is adjusted to incorporate relative positional embeddings. The bias, which signifies the distance between tokens, is introduced into the product of Query and Key matrices in the Self Attention layer. The benefit of this modification is that tokens separated by the same distance, let's say 4, will share the same bias, irrespective of their absolute positions in the sentence. Importantly, this method is scalable and can be applied to sequences of arbitrary length.
+
+### Rotary Positional Embedding
+
+![alt text](Visuals/01_RoPE.png)
+
+The main concept here is rather than adding a positional vector to indicate a word's position in a sentence, the proposed approach involves applying a rotation to the vector itself. To illustrate, consider a 2-dimensional word vector representing the word 'Man.' If this word appears in the second position in a sentence, the vector is rotated by an angle denoted as θ. For words occurring even later in the sentence, the vector undergoes additional rotation, and the degree of rotation is simply an integer multiple of the word's position in the sentence.
