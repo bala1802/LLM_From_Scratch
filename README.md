@@ -70,4 +70,10 @@ Another advantage is that it preserves the relative positions of words. Consider
 
 ![alt text](Visuals/03_RoPE.png)
 
-This is the equation from the paper [ROFORMER: ENHANCED TRANSFORMER WITH ROTARY POSITION EMBEDDING](https://arxiv.org/pdf/2104.09864&hl=ja&sa=X&ei=5B0dZcHLGJ2h6rQPweSL0A0&scisig=AFWwaebUGjvb4JBysy2Z1l7aHWfJ&oi=scholarr)
+Here is the equation from the paper [ROFORMER: ENHANCED TRANSFORMER WITH ROTARY POSITION EMBEDDING](https://arxiv.org/pdf/2104.09864&hl=ja&sa=X&ei=5B0dZcHLGJ2h6rQPweSL0A0&scisig=AFWwaebUGjvb4JBysy2Z1l7aHWfJ&oi=scholarr) representing Rotary Embeddings for the 2D case.
+
+![alt text](Visuals/04_RoPE_.png)
+
+The crucial element here is a Rotation Matrix, and its purpose is to rotate a vector by an angle of `m*θ`, where `m` signifies the absolute position of the token in a sentence.
+
+x is a vector, typically 2-dimensional in this case, that undergoes rotation. It's important to note that Linear Transformations are applied to obtain the Query and Key vectors before introducing the rotation matrix. This step ensures the preservation of rotational invariance property. The rotation is specifically applied to the Query and Key vectors, not to the Value vector in self-attention.
