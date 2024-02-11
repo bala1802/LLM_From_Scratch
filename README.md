@@ -40,8 +40,4 @@ In real-world scenarios, researchers have discovered that whether you learn posi
 
 ![alt text](Visuals/03_AbsoultePositionalEmbedding.png)
 
-Another issue is that each positional embedding operates independently, leading to a lack of distinction between Position 1 and Position 2 compared to Position 2 and Position 500.
-
-
-
-
+Another issue is that each positional embedding is essentially treated as independent of others. Consequently, there's no inherent distinction between Position 1 and Position 2 versus the relationship between Position 2 and Position 500. Intuitively, one would expect Position 1 and Position 2 to be more similar to each other than to Position 500, given their proximity in the sequence.
