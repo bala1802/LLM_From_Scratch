@@ -61,3 +61,7 @@ The main concept here is rather than adding a positional vector to indicate a wo
 To depict the position `m` in a sentence, the original word vector is rotated by an angle of `m*θ`.
 
 Rotary Positional Embedding brings several benefits over absolute positional embeddings. For instance, when adding more tokens to the end of a sentence, the vectors for the beginning of the sentence remain unchanged. This characteristic simplifies caching since, as long as a word occupies position number one in a sentence, its positional embedding remains unaffected regardless of the number of words following it.
+
+![alt text](Visuals/02_RoPE.png)
+
+Another advantage is that it preserves the relative positions of words. Consider a sentence with 'Man' represented by a green vector and 'Snake' by a blue vector. If we add more words to the sentence while maintaining the distance between 'Man' and 'Snake,' the Rotary Positional Embeddings ensure that both vectors are rotated by the exact same amount. As a result, the angles between the vectors remain preserved.
