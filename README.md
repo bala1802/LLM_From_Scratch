@@ -76,4 +76,12 @@ Here is the equation from the paper [ROFORMER: ENHANCED TRANSFORMER WITH ROTARY 
 
 The crucial element here is a Rotation Matrix, and its purpose is to rotate a vector by an angle of `m*θ`, where `m` signifies the absolute position of the token in a sentence.
 
-x is a vector, typically 2-dimensional in this case, that undergoes rotation. It's important to note that Linear Transformations are applied to obtain the Query and Key vectors before introducing the rotation matrix. This step ensures the preservation of rotational invariance property. The rotation is specifically applied to the Query and Key vectors, not to the Value vector in self-attention.
+`x` is a vector, typically 2-dimensional in this case, that undergoes rotation. It's important to note that `Linear Transformations` are applied to obtain the `Query` and `Key` vectors before introducing the rotation matrix. This step ensures the preservation of rotational invariance property. The rotation is specifically applied to the `Query` and `Key` vectors, not to the `Value` vector in `self-attention`.
+
+![alt text](Visuals/05_RoPE.png)
+
+In a more general scenario, when the vector has more than two dimensions, this equation comes into play. 
+
+![alt text](Visuals/06_RoPE.png)
+
+It essentially divides the vector into chunks of two dimensions each and performs rotations. The rotation process begins with applying a rotation to the first two dimensions of the vector, followed by a rotation to the next two dimensions, and so forth. Each pair of dimensions in the vector is subjected to a different rotation angle, denoted as `θ`. It's worth noting that the vector's dimension is assumed to be an even number, which is typically the case.
