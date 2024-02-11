@@ -56,4 +56,8 @@ In a different approach, the attention mechanism is adjusted to incorporate rela
 
 ![alt text](Visuals/01_RoPE.png)
 
-The main concept here is rather than adding a positional vector to indicate a word's position in a sentence, the proposed approach involves applying a rotation to the vector itself. To illustrate, consider a 2-dimensional word vector representing the word 'Man.' If this word appears in the second position in a sentence, the vector is rotated by an angle denoted as θ. For words occurring even later in the sentence, the vector undergoes additional rotation, and the degree of rotation is simply an integer multiple of the word's position in the sentence.
+The main concept here is rather than adding a positional vector to indicate a word's position in a sentence, the proposed approach involves applying a rotation to the vector itself. To illustrate, consider a 2-dimensional word vector representing the word 'Man.' If this word appears in the second position in a sentence, the vector is rotated by an angle denoted as `θ`. For words occurring even later in the sentence, the vector undergoes additional rotation, and the degree of rotation is simply an integer multiple of the word's position in the sentence.
+
+To depict the position `m` in a sentence, the original word vector is rotated by an angle of `m*θ`.
+
+Rotary Positional Embedding brings several benefits over absolute positional embeddings. For instance, when adding more tokens to the end of a sentence, the vectors for the beginning of the sentence remain unchanged. This characteristic simplifies caching since, as long as a word occupies position number one in a sentence, its positional embedding remains unaffected regardless of the number of words following it.
