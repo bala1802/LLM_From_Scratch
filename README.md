@@ -47,3 +47,5 @@ Another issue is that each positional embedding is essentially treated as indepe
 ![alt text](Visuals/01_RelativePositionalEmbedding.png)
 
 Another way to tackle this is through Relative Positional Embeddings. Instead of focusing on a token's absolute position in a sentence, this approach involves learning a representation for every pair of tokens. For instance, we find a way to represent two tokens that are a distance of 4 apart. Since the position varies for each pair of tokens, it's not as straightforward as just adding a Position Vector to the word Vector.
+
+In a different approach, the attention mechanism is adjusted to incorporate relative positional embeddings. The bias, which signifies the distance between tokens, is introduced into the product of Query and Key matrices in the Self Attention layer. The benefit of this modification is that tokens separated by the same distance, let's say 4, will share the same bias, irrespective of their absolute positions in the sentence. Importantly, this method is scalable and can be applied to sequences of arbitrary length.
