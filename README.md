@@ -36,8 +36,11 @@ In the process of creating the input for the Transformer Layer, we combine the w
 
 2) The alternative approach to obtaining positional embeddings employs a sinusoidal function. This method constructs a unique positional embedding for every possible position in the sequence. Unlike the first method, using sinusoidal functions allows flexibility in representing sequences of varying lengths.
 
+In real-world scenarios, researchers have discovered that whether you learn positional embeddings from the data or construct them using sinusoidal functions, the performance of these methods is quite similar in actual machine learning models.
 
+![alt text](Visuals/03_AbsoultePositionalEmbedding.png)
 
+Another issue is that each positional embedding operates independently, leading to a lack of distinction between Position 1 and Position 2 compared to Position 2 and Position 500.
 
 
 
