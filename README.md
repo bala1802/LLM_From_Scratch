@@ -65,3 +65,9 @@ Rotary Positional Embedding brings several benefits over absolute positional emb
 ![alt text](Visuals/02_RoPE.png)
 
 Another advantage is that it preserves the relative positions of words. Consider a sentence with 'Man' represented by a green vector and 'Snake' by a blue vector. If we add more words to the sentence while maintaining the distance between 'Man' and 'Snake,' the Rotary Positional Embeddings ensure that both vectors are rotated by the exact same amount. As a result, the angles between the vectors remain preserved. So, the dot product between the vectors stays constant when we add words to the beginning or end of the sentence, given that the distance between the two words remains unchanged. This observation highlights that Rotary Positional Embeddings encompass the advantages of both Absolute and Relative Positional Embeddings.
+
+#### RoPE implementation: Matrix Multiplication
+
+![alt text](Visuals/03_RoPE.png)
+
+This is the equation from the paper [ROFORMER: ENHANCED TRANSFORMER WITH ROTARY POSITION EMBEDDING](https://arxiv.org/pdf/2104.09864&hl=ja&sa=X&ei=5B0dZcHLGJ2h6rQPweSL0A0&scisig=AFWwaebUGjvb4JBysy2Z1l7aHWfJ&oi=scholarr)
